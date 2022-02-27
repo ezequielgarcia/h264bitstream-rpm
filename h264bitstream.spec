@@ -43,6 +43,7 @@ This package provides the development header files for h264bitstream.
 
 %prep
 %setup -q
+autoreconf -i
 
 %build
 %configure --prefix=%{_prefix} --enable-shared --disable-static
@@ -62,13 +63,12 @@ rm %{buildroot}%{_libdir}/*.la
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*.so.*
-%doc README TODO COPYING
 
 %files -n h264bitstream-devel
 %defattr(-,root,root)
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
-%{_includedir}/*.h
+%{_includedir}/h264bitstream/*.h
 
 %changelog
 * Sun Feb 27 2022 ezequiel@vanguardiasur.com.ar
