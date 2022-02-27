@@ -22,7 +22,7 @@ Summary:        Library for reading/writing of H.264 video
 License:        LGPL-2.1
 Group:          Productivity/Multimedia/Video/Editors and Convertors
 Url:            https://sourceforge.net/projects/h264bitstream/
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://sourceforge.net/projects/h264bitstream/files/%{name}/%{version}/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
