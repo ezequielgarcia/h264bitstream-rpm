@@ -52,8 +52,6 @@ make %{?_smp_mflags}
 %install
 %make_install
 
-rm %{buildroot}%{_libdir}/*.la
-
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
@@ -63,6 +61,7 @@ rm %{buildroot}%{_libdir}/*.la
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*.so.*
+%{_libdir}/*.la
 
 %files -n h264bitstream-devel
 %defattr(-,root,root)
