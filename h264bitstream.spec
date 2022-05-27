@@ -17,7 +17,7 @@
 
 Name:           h264bitstream
 Version:        0.2.0
-Release:        2.1
+Release:        2.2
 Summary:        Library for reading/writing of H.264 video
 License:        LGPL-2.1
 Group:          Productivity/Multimedia/Video/Editors and Convertors
@@ -70,6 +70,9 @@ make %{?_smp_mflags}
 %{_includedir}/h264bitstream/*.h
 
 %changelog
+* Fri May 27 2022 ezequiel@vanguardiasur.com.ar
+- Bump 0.2.0-2.2
+- Package .la file
 * Sun Feb 27 2022 ezequiel@vanguardiasur.com.ar
 - Bump 0.2.0
 * Fri Oct 21 2016 neutrino8@gmail.com
