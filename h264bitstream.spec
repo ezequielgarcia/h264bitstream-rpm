@@ -17,12 +17,12 @@
 
 Name:           h264bitstream
 Version:        0.2.0
-Release:        2.2
+Release:        3.0
 Summary:        Library for reading/writing of H.264 video
 License:        LGPL-2.1
 Group:          Productivity/Multimedia/Video/Editors and Convertors
-Url:            https://sourceforge.net/projects/h264bitstream/
-Source0:        https://sourceforge.net/projects/h264bitstream/files/%{name}/%{version}/%{name}-%{version}.tar.gz
+Url:            https://github.com/ezequielgarcia/h264bitstream
+Source0:        https://github.com/ezequielgarcia/h264bitstream/archive/6d76b934f9d4b38a2c055c0331308a31462817a9.zip
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
@@ -42,10 +42,11 @@ Provides:       h264bitstream-devel = %{version}-%{release}
 This package provides the development header files for h264bitstream.
 
 %prep
-%setup -q
+%setup -n h264bitstream-6d76b934f9d4b38a2c055c0331308a31462817a9
 autoreconf -i
 
 %build
+%undefine _hardened_build
 %configure --prefix=%{_prefix} --enable-shared --disable-static
 make %{?_smp_mflags}
 
@@ -70,6 +71,10 @@ make %{?_smp_mflags}
 %{_includedir}/h264bitstream/*.h
 
 %changelog
+* Mon May 30 2022 ezequiel@vanguardiasur.com.ar
+- Bump 0.2.0-3.0
+- Checkout 6d76b934f9d4b38a2c055c0331308a31462817a9 from my fork, which has some fixes.
+- Disable hardened build
 * Fri May 27 2022 ezequiel@vanguardiasur.com.ar
 - Bump 0.2.0-2.2
 - Package .la file
